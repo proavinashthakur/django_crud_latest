@@ -186,7 +186,7 @@ def get_cities(request, cities_id):
 @api_view(['GET'])
 def get_cities_data(request):
     data =[]
-    cities = Cities.objects.filter(name__icontains='ane')
+    cities = Cities.objects.all()
 
     for city in cities:
         country = Countries.objects.get(id=city.country_id)
